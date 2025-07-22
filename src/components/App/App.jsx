@@ -28,7 +28,7 @@ function App() {
   const fetchGoals = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/goals');
+      const response = await fetch('https://smart-goal-planner-code-challenge-db.onrender.com/goals');
       if (!response.ok) {
         throw new Error('Failed to fetch goals');
       }
@@ -46,7 +46,7 @@ function App() {
   // Add a new goal
   const addGoal = async (newGoal) => {
     try {
-      const response = await fetch('http://localhost:3000/goals', {
+      const response = await fetch('https://smart-goal-planner-code-challenge-db.onrender.com/goals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function App() {
   // Update an existing goal
   const updateGoal = async (updatedGoal) => {
     try {
-      const response = await fetch(`http://localhost:3000/goals/${updatedGoal.id}`, {
+      const response = await fetch(`https://smart-goal-planner-code-challenge-db.onrender.com/goals/${updatedGoal.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ function App() {
   // Delete a goal
   const deleteGoal = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/goals/${id}`, {
+      const response = await fetch(`https://smart-goal-planner-code-challenge-db.onrender.com/goals/${id}`, {
         method: 'DELETE',
       });
 
@@ -121,7 +121,7 @@ function App() {
         const newSavedAmount = parseFloat(goalToUpdate.savedAmount) + parseFloat(amount);
 
         // Update the goal with the new saved amount
-        const response = await fetch(`http://localhost:3000/goals/${goalId}`, {
+        const response = await fetch(`https://smart-goal-planner-code-challenge-db.onrender.com/goals/${goalId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
