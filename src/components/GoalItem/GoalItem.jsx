@@ -76,6 +76,19 @@ function GoalItem({ goal, onDelete, onUpdate }) {
               />
             </div>
             <div className="mb-3">
+              <label className="form-label">Saved Amount:</label>
+              <input
+                type="number"
+                className="form-control"
+                name="savedAmount"
+                value={editedGoal.savedAmount}
+                onChange={handleInputChange}
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+            <div className="mb-3">
               <label className="form-label">Category:</label>
               <input
                 type="text"
